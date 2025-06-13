@@ -37,6 +37,34 @@ export async function uploadImage(file: File, folder = "mylapkart") {
   }
 }
 
+export async function uploadBase64Image(base64: string, folder = "mylapkart/avatars", publicId?: string) {
+  return new Promise<{ url: string; publicId: string }>((resolve, reject) => {
+    cloudinary.uploader.upload(
+      base64,
+      {
+        folder,
+        public_id: publicId,
+        overwrite: true,
+        transformation: [
+          { width: 256, height: 256, crop: "fill" },
+          { quality: "auto" },
+          { format: "auto" }
+        ],
+      },
+      (error, result) => {
+        if (error || !result) {
+          reject(error || new Error("Upload failed"));
+        } else {
+          resolve({
+            url: result.secure_url,
+            publicId: result.public_id,
+          });
+        }
+      }
+    );
+  });
+}
+
 export async function deleteImage(publicId: string) {
   try {
     const result = await cloudinary.uploader.destroy(publicId)

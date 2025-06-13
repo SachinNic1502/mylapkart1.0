@@ -60,39 +60,51 @@ export function OrderSummarySection({
           </div>
         ))}
 
-        <div className="border-t pt-4 space-y-2">
-          <div className="flex justify-between">
-            <span>Subtotal:</span>
-            <span>₹{total.toLocaleString()}</span>
-          </div>
-          {useCoins && coinDiscount > 0 && (
-            <div className="flex justify-between text-green-600">
-              <span>Coin Discount:</span>
-              <span>-₹{coinDiscount.toLocaleString()}</span>
-            </div>
-          )}
-          <div className="flex justify-between">
-            <span>Shipping:</span>
-            <span>Free</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Tax (18%):</span>
-            <span>₹{taxAmount.toLocaleString()}</span>
-          </div>
-          <div className="flex justify-between text-lg font-bold border-t pt-2">
-            <span>Total:</span>
-            <span>₹{finalTotal.toLocaleString()}</span>
-          </div>
-        </div>
+        {(() => {
+          // Delivery charge logic
+          const deliveryCharge = total < 9999 ? 149 : 0;
+          const displayCoinDiscount = useCoins && coinDiscount > 0 ? coinDiscount : 0;
+          const subtotalAfterDiscount = total - displayCoinDiscount;
+          const tax = Math.round(subtotalAfterDiscount * 0.18);
+          const fullTotal = subtotalAfterDiscount + deliveryCharge + tax;
+          return (
+            <>
+              <div className="border-t pt-4 space-y-2">
+                <div className="flex justify-between">
+                  <span>Subtotal:</span>
+                  <span>₹{total.toLocaleString()}</span>
+                </div>
+                {displayCoinDiscount > 0 && (
+                  <div className="flex justify-between text-green-600">
+                    <span>Coin Discount:</span>
+                    <span>-₹{displayCoinDiscount.toLocaleString()}</span>
+                  </div>
+                )}
+                <div className="flex justify-between">
+                  <span>Shipping:</span>
+                  <span>{deliveryCharge > 0 ? `₹${deliveryCharge}` : "Free"}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Tax (18%):</span>
+                  <span>₹{tax.toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between text-lg font-bold border-t pt-2">
+                  <span>Total:</span>
+                  <span>₹{fullTotal.toLocaleString()}</span>
+                </div>
+              </div>
+              <Button
+                onClick={handlePlaceOrder}
+                disabled={loading || (paymentMethod === "razorpay" && !razorpayLoaded)}
+                className="w-full"
+                size="lg"
+              >
+                {loading ? "Processing..." : `Place Order - ₹${fullTotal.toLocaleString()}`}
+              </Button>
+            </>
+          );
+        })()}
 
-        <Button
-          onClick={handlePlaceOrder}
-          disabled={loading || (paymentMethod === "razorpay" && !razorpayLoaded)}
-          className="w-full"
-          size="lg"
-        >
-          {loading ? "Processing..." : `Place Order - ₹${finalTotal.toLocaleString()}`}
-        </Button>
 
         {paymentMethod === "razorpay" && !razorpayLoaded && (
           <p className="text-sm text-gray-600 text-center">Loading payment gateway...</p>

@@ -64,7 +64,7 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
           const errorData = await response.json()
           throw new Error(errorData.message || `Failed to fetch product: ${response.statusText}`)
         }
-        const data: Product & { specifications?: {key: string, value: string, _id?: string}[] } = await response.json()
+        const data: Product & { specifications?: { key: string, value: string, _id?: string }[] } = await response.json()
         setProduct({
           name: data.name || '',
           description: data.description || '',
@@ -131,6 +131,7 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
       { value: 'storage', label: 'Storage' },
       { value: 'cooling', label: 'Cooling' },
       { value: 'cleaning', label: 'Cleaning' },
+      { value: 'others', label: "Others" }
     ],
   };
   const conditionOptions = [
@@ -201,9 +202,9 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
     setLoading(true)
 
     if (!product.name || !product.price || !product.category || !product.stock || !product.brand || !product.model || !product.subcategory || !product.status) {
-        setSubmitError('Please fill in all required fields including Name, Price, Category, Stock, Brand, Model, Subcategory, and Status.');
-        setLoading(false);
-        return;
+      setSubmitError('Please fill in all required fields including Name, Price, Category, Stock, Brand, Model, Subcategory, and Status.');
+      setLoading(false);
+      return;
     }
     // Validate subcategory for selected category
     if (
@@ -216,14 +217,14 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
       return;
     }
     if (isNaN(Number(product.price)) || Number(product.price) <= 0) {
-        setSubmitError('Price must be a positive number.');
-        setLoading(false);
-        return;
+      setSubmitError('Price must be a positive number.');
+      setLoading(false);
+      return;
     }
     if (isNaN(Number(product.stock)) || Number(product.stock) < 0) {
-        setSubmitError('Stock must be a non-negative number.');
-        setLoading(false);
-        return;
+      setSubmitError('Stock must be a non-negative number.');
+      setLoading(false);
+      return;
     }
 
     try {
@@ -260,7 +261,7 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
     }
   }
 
-  if (loading && !product.name) { 
+  if (loading && !product.name) {
     return <div className="text-center py-10">Loading product details...</div>
   }
 

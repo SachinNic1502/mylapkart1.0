@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Search, SlidersHorizontal } from "lucide-react"
-import { useSearchParams } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 
 interface Product {
   _id: string
@@ -40,16 +40,39 @@ interface PaginatedResponse {
 }
 
 export default function ProductsPage() {
-  const searchParams = useSearchParams()
-  const [products, setProducts] = useState<Product[]>([])
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "")
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get("category") || "all")
-  const [selectedCondition, setSelectedCondition] = useState("all")
-  const [priceRange, setPriceRange] = useState([0, 200000])
-  const [sortBy, setSortBy] = useState("newest")
-  const [showFilters, setShowFilters] = useState(false)
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCondition, setSelectedCondition] = useState("all");
+  const [priceRange, setPriceRange] = useState([0, 200000]);
+  const [sortBy, setSortBy] = useState("newest");
+  const [showFilters, setShowFilters] = useState(false);
+
+  // Sync selectedCategory with URL query param
+  useEffect(() => {
+    setSelectedCategory(searchParams.get("category") || "all");
+  }, [searchParams]);
+
+  // Optionally, sync searchTerm too
+  useEffect(() => {
+    setSearchTerm(searchParams.get("search") || "");
+  }, [searchParams]);
+
+  // When category changes in UI, update URL
+  const handleCategoryChange = (category: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (category === "all") {
+      params.delete("category");
+    } else {
+      params.set("category", category);
+    }
+    router.replace(`${pathname}?${params.toString()}`);
+  };
 
   useEffect(() => {
     fetchProducts()
@@ -191,7 +214,7 @@ export default function ProductsPage() {
                   {/* Category */}
                   <div>
                     <Label>Category</Label>
-                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <Select value={selectedCategory} onValueChange={handleCategoryChange}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>

@@ -22,6 +22,8 @@ export async function GET(request: NextRequest) {
   }
 }
 
+import { uploadBase64Image } from "@/lib/cloudinary"
+
 export async function PUT(request: NextRequest) {
   try {
     const auth = await requireAuth(request)
@@ -33,6 +35,21 @@ export async function PUT(request: NextRequest) {
 
     // Remove email from update data as it shouldn't be changed
     delete updateData.email
+
+    // Handle avatar upload (base64 or url)
+    if (updateData.avatar && typeof updateData.avatar === "string") {
+      if (updateData.avatar.startsWith("data:")) {
+        // upload base64 image to Cloudinary
+        const { url } = await uploadBase64Image(updateData.avatar, "mylapkart/avatars", auth.userId.toString())
+        updateData.avatar = url
+      } else if (updateData.avatar.startsWith("http")) {
+        // direct url
+        // keep as is
+      } else {
+        // invalid avatar, remove
+        delete updateData.avatar
+      }
+    }
 
     const user = await User.findByIdAndUpdate(auth.userId, updateData, { new: true, runValidators: true }).select(
       "-password",

@@ -39,8 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Category pages
   const categories = [
-    { category: "laptop", subcategories: ["new", "refurbished"] },
-    { category: "iphone", subcategories: ["second", "refurbished", "open_box"] },
+    { category: "laptop", subcategories: ["new", "business series"] },
+    { category: "iphone", subcategories: ["second", "business series", "open_box"] },
     { category: "desktop", subcategories: ["gaming", "office", "workstation", "all_in_one"] },
     { category: "accessories", subcategories: ["mouse", "keyboard", "headphones", "monitor"] },
   ]

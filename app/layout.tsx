@@ -11,27 +11,25 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://mylapkart.in"),
   title: {
-    default: "MyLapKart - Your Ultimate Laptop Store | New & Refurbished Laptops, iPhones, Desktops",
+    default: "MyLapKart - Your Ultimate Laptop Store | New & Business Laptops, iPhones, Desktops",
     template: "%s | MyLapKart",
   },
-  description:
-    "Find the best laptops, iPhones, desktops and accessories at competitive prices. New, refurbished and second-hand devices with warranty. Free shipping on orders over ₹25,000.",
+  description: "Shop new & business laptops, iPhones, desktops at MyLapKart. Competitive prices with warranty. Free shipping on orders over ₹25,000. Best deals on Dell, HP, Lenovo, Apple.",
   keywords: [
     "laptops",
+    "business laptops",
+    "new laptops",
     "iphones",
     "desktops",
-    "accessories",
-    "refurbished laptops",
-    "second hand phones",
     "computer accessories",
-    "Dell",
-    "HP",
-    "Lenovo",
-    "ASUS",
-    "Apple",
+    "Dell laptops",
+    "HP laptops",
+    "Lenovo laptops",
+    "Apple Macbook",
     "gaming laptops",
-    "office computers",
     "MyLapKart",
+    "laptop store",
+    "computer store",
   ],
   authors: [{ name: "MyLapKart" }],
   creator: "MyLapKart",
@@ -48,10 +46,10 @@ export const metadata: Metadata = {
     siteName: "MyLapKart",
     title: "MyLapKart - Your Ultimate Laptop Store",
     description:
-      "Find the best laptops, iPhones, desktops and accessories at competitive prices. New, refurbished and second-hand devices with warranty.",
+      "Find the best laptops, iPhones, desktops and accessories at competitive prices. New, business series and second-hand devices with warranty.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/icons/mylapkart.png",
         width: 1200,
         height: 630,
         alt: "MyLapKart - Your Ultimate Laptop Store",
@@ -62,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MyLapKart - Your Ultimate Laptop Store",
     description: "Find the best laptops, iPhones, desktops and accessories at competitive prices.",
-    images: ["/og-image.jpg"],
+    images: ["/icons/mylapkart.png"],
     creator: "@MyLapKart",
   },
   robots: {
@@ -85,6 +83,9 @@ export const metadata: Metadata = {
     canonical: "https://mylapkart.in",
   },
   category: "technology",
+  icons: {
+    icon: "/icons/mylapkart.png",
+  },
 }
 
 export default function RootLayout({

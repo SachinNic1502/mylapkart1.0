@@ -93,24 +93,34 @@ export default function CartPage() {
                 <CardTitle>Order Summary</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex justify-between">
-                  <span>Subtotal:</span>
-                  <span>₹{total.toLocaleString()}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Shipping:</span>
-                  <span>Free</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Tax:</span>
-                  <span>₹{Math.round(total * 0.18).toLocaleString()}</span>
-                </div>
-                <div className="border-t pt-4">
-                  <div className="flex justify-between text-lg font-bold">
-                    <span>Total:</span>
-                    <span>₹{Math.round(total * 1.18).toLocaleString()}</span>
-                  </div>
-                </div>
+                {(() => {
+                  // Delivery charge logic, match checkout
+                  const deliveryCharge = total < 9999 ? 149 : 0;
+                  const tax = Math.round(total * 0.18);
+                  const grandTotal = total + deliveryCharge + tax;
+                  return (
+                    <>
+                      <div className="flex justify-between">
+                        <span>Subtotal:</span>
+                        <span>₹{total.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Shipping:</span>
+                        <span>{deliveryCharge > 0 ? `₹${deliveryCharge}` : "Free"}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Tax:</span>
+                        <span>₹{tax.toLocaleString()}</span>
+                      </div>
+                      <div className="border-t pt-4">
+                        <div className="flex justify-between text-lg font-bold">
+                          <span>Total:</span>
+                          <span>₹{grandTotal.toLocaleString()}</span>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })()}
                 <Button asChild className="w-full" size="lg">
                   <Link href="/checkout">Proceed to Checkout</Link>
                 </Button>

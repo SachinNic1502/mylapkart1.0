@@ -7,6 +7,7 @@ import { useAuth, useCart } from "@/components/providers"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -104,7 +105,9 @@ export function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">MyLapKart</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                <Image src="/icons/mylapkart.png" alt="MyLapKart" width={50} height={50} className="rounded-full" /> 
+              </span>
             </Link>
 
             {/* Mobile menu button */}

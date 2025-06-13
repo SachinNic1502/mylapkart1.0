@@ -26,7 +26,7 @@ export default function ShippingPolicyPage() {
         <span className="font-semibold">Delivery Time:</span> 3–7 working days (may vary by location)
       </div>
       <div className="mb-2">
-        <span className="font-semibold">Shipping Charges:</span> Free for orders above ₹[insert amount], nominal for others
+        <span className="font-semibold">Shipping Charges:</span> Free for orders above ₹9,999, nominal for others
       </div>
       <div className="mb-2">
         <span className="font-semibold">Tracking:</span> Shared via email/SMS after shipment

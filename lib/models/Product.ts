@@ -41,6 +41,7 @@ const productSchema = new mongoose.Schema(
               "storage",
               "cooling",
               "cleaning",
+              "others"
             ],
           }
           return categorySubcategories[this.category]?.includes(value)

@@ -72,7 +72,7 @@ function determineProductCategory(product: any): string | null {
   const description = (product.description || '').toLowerCase();
 
   // Only laptops and iPhones are eligible for gifts
-  // Laptop check
+  // Laptop check (stricter, no brand-only matches)
   if (
     name.includes('laptop') ||
     description.includes('laptop') ||
@@ -85,13 +85,7 @@ function determineProductCategory(product: any): string | null {
     name.includes('chromebook') ||
     description.includes('chromebook') ||
     name.includes('portable computer') ||
-    description.includes('portable computer') ||
-    name.includes('lenovo') ||
-    description.includes('lenovo') ||
-    name.includes('dell') ||
-    description.includes('dell') ||
-    name.includes('hp ') ||
-    description.includes('hp ')
+    description.includes('portable computer')
   ) {
     return 'laptop';
   }
@@ -162,7 +156,7 @@ async function createGiftCoupon(userId: string, orderId: string, productIdMap = 
       }
     }
 
-    if (!eligibleCategory) return null;
+    if (!eligibleCategory || eligibleCategory === 'accessories') return null;
 
     // Get gift item - now we'll get the full product document
     const giftProduct = await getRandomGiftProductForCategory(eligibleCategory);
@@ -205,16 +199,37 @@ async function createGiftCoupon(userId: string, orderId: string, productIdMap = 
 
 // New function to get full product document
 async function getRandomGiftProductForCategory(category: string) {
-  // Only return gifts for 'laptop' or 'iphone' categories
-  if (category !== 'laptop' && category !== 'iphone') {
-    return null;
+  if (category === 'laptop') {
+    // Only mouse, keyboard, or cleaner under 200 Rs
+    const allowedKeywords = ['mouse', 'keyboard', 'cleaner'];
+    let gifts = await Product.find({
+      isGift: true,
+      price: { $lte: 400 }
+    });
+    gifts = gifts.filter(gift => {
+      const name = (gift.name || '').toLowerCase();
+      const desc = (gift.description || '').toLowerCase();
+      return allowedKeywords.some(keyword => name.includes(keyword) || desc.includes(keyword));
+    });
+    if (gifts.length === 0) return null;
+    return gifts[Math.floor(Math.random() * gifts.length)];
   }
-  // Try isGift: true for the given category
-  const query = { category, isGift: true };
-  const matchingGifts = await Product.find(query);
-  if (matchingGifts.length === 0) return null;
-  // Return full product document
-  return matchingGifts[Math.floor(Math.random() * matchingGifts.length)];
+  if (category === 'iphone') {
+    // Only tempered glass or back cover under 250 Rs
+    const allowedKeywords = ['tempered glass', 'tappan glass', 'back cover'];
+    let gifts = await Product.find({
+      isGift: true,
+      price: { $lte: 400 }
+    });
+    gifts = gifts.filter(gift => {
+      const name = (gift.name || '').toLowerCase();
+      const desc = (gift.description || '').toLowerCase();
+      return allowedKeywords.some(keyword => name.includes(keyword) || desc.includes(keyword));
+    });
+    if (gifts.length === 0) return null;
+    return gifts[Math.floor(Math.random() * gifts.length)];
+  }
+  return null;
 }
 
 export async function POST(request: NextRequest) {

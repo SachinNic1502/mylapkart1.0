@@ -5,7 +5,7 @@ export function generateProductTitle(product: {
     category: string
   }): string {
     const conditionText =
-      product.condition === "new" ? "New" : product.condition === "refurbished" ? "Refurbished" : "Used"
+      product.condition === "new" ? "New" : product.condition === "business series" ? "business series" : "Used"
   
     return `${conditionText} ${product.brand} ${product.name} - ${product.category} | MyLapKart`
   }
@@ -19,7 +19,7 @@ export function generateProductTitle(product: {
     description?: string
   }): string {
     const conditionText =
-      product.condition === "new" ? "brand new" : product.condition === "refurbished" ? "refurbished" : "pre-owned"
+      product.condition === "new" ? "brand new" : product.condition === "business series" ? "business series" : "pre-owned"
   
     const baseDescription = `Buy ${conditionText} ${product.brand} ${product.name} for ₹${product.price.toLocaleString()} at MyLapKart. ${product.description || ""}`
   
@@ -36,7 +36,7 @@ export function generateProductTitle(product: {
   
     const subcategoryMap: Record<string, string> = {
       new: "New",
-      refurbished: "Refurbished",
+      business_series: "business series",
       second: "Second Hand",
       gaming: "Gaming",
       office: "Office",
@@ -51,7 +51,7 @@ export function generateProductTitle(product: {
   export function generateCategoryDescription(category: string, subcategory?: string): string {
     const descriptions: Record<string, string> = {
       laptop: "Discover our wide range of laptops from top brands like Dell, HP, Lenovo, ASUS and more.",
-      iphone: "Find the best deals on iPhones - new, refurbished and second-hand with warranty.",
+      iphone: "Find the best deals on iPhones - new, business series and second-hand with warranty.",
       desktop: "Browse our collection of desktop computers for gaming, office work and professional use.",
       accessories: "Complete your setup with our range of computer accessories, peripherals and components.",
     }

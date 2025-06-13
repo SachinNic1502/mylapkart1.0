@@ -43,6 +43,7 @@ const categorySubcategories = {
     { value: "storage", label: "Storage" },
     { value: "cooling", label: "Cooling" },
     { value: "cleaning", label: "Cleaning" },
+    { value: "others", label: "Others" },
   ],
 }
 
@@ -117,7 +118,7 @@ export default function AddProductPage() {
   const handleJsonImport = () => {
     try {
       const importedData = JSON.parse(jsonInput)
-      
+
       // Validate and map the imported data to your form structure
       const mappedData = {
         name: importedData.name || "",
@@ -129,8 +130,8 @@ export default function AddProductPage() {
         model: importedData.model || "",
         condition: importedData.condition || "new",
         stock: importedData.stock?.toString() || "",
-        specifications: importedData.specifications?.length 
-          ? importedData.specifications 
+        specifications: importedData.specifications?.length
+          ? importedData.specifications
           : [{ key: "", value: "" }],
         images: importedData.images || [],
         isGift: importedData.isGift || false,
@@ -244,10 +245,10 @@ export default function AddProductPage() {
                 <div className="flex justify-between items-center">
                   <CardTitle>Basic Information</CardTitle>
                   <div className="flex space-x-2">
-                    <Button 
-                      type="button" 
-                      onClick={() => setShowJsonImport(true)} 
-                      variant="outline" 
+                    <Button
+                      type="button"
+                      onClick={() => setShowJsonImport(true)}
+                      variant="outline"
                       size="sm"
                     >
                       Import JSON
@@ -471,23 +472,55 @@ export default function AddProductPage() {
                   rows={15}
                   className="font-mono text-sm"
                 />
-                <div className="flex justify-end space-x-2 mt-4">
-                  <Button 
-                    type="button" 
-                    variant="outline" 
+                <div className="flex justify-between mt-4">
+                  <Button
+                    type="button"
+                    variant="outline"
                     onClick={() => {
-                      setShowJsonImport(false)
-                      setJsonInput("")
+                      const exampleJson = `{
+  "name": "Product Name",
+  "description": "Product description",
+  "price": 999,
+  "category": "laptop",
+  "subcategory": "new",
+  "brand": "Brand Name",
+  "model": "Model Number",
+  "condition": "new",
+  "stock": 10,
+  "specifications": [
+    { "key": "Processor", "value": "Intel Core i7" },
+    { "key": "RAM", "value": "16GB" }
+  ],
+  "images": [],
+  "isGift": false
+}`;
+                      navigator.clipboard.writeText(exampleJson);
+                      toast({
+                        title: "JSON Example Copied",
+                        description: "Example JSON format has been copied to your clipboard",
+                      });
                     }}
                   >
-                    Cancel
+                    Copy Example
                   </Button>
-                  <Button 
-                    type="button" 
-                    onClick={handleJsonImport}
-                  >
-                    Import
-                  </Button>
+                  <div className="flex justify-end space-x-2">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => {
+                        setShowJsonImport(false)
+                        setJsonInput("")
+                      }}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={handleJsonImport}
+                    >
+                      Import
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="mb-4">
-              Founded in 2023, MyLapKart was born out of a passion for technology and a commitment to making high-quality laptops and accessories accessible to everyone in India. We believe in honest pricing, transparent policies, and exceptional customer service.
+              Founded in 2022, MyLapKart was born out of a passion for technology and a commitment to making high-quality laptops and accessories accessible to everyone in India. We believe in honest pricing, transparent policies, and exceptional customer service.
             </p>
             <p>
               Our mission is to simplify your shopping experience with a curated selection, fast shipping, and dedicated support — so you can focus on what matters most.
