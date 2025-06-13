@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://mylapkart.in"),
   title: {
-    default: "MyLapKart - Your Ultimate Laptop Store | New & Business Laptops, iPhones, Desktops",
+    default: "MyLapKart - Your Ultimate Laptop Store | New & Business  Laptops, iPhones, Desktops",
     template: "%s | MyLapKart",
   },
   description: "Shop new & business laptops, iPhones, desktops at MyLapKart. Competitive prices with warranty. Free shipping on orders over ₹25,000. Best deals on Dell, HP, Lenovo, Apple.",

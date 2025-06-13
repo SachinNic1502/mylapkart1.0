@@ -22,7 +22,7 @@ export function SEOHead({
   title = "MyLapKart - Your Ultimate Laptop Store",
   description = "Find the best laptops, iPhones, desktops and accessories at competitive prices. New, business series and second-hand devices with warranty.",
   keywords = "laptops, iphones, desktops, accessories, business series laptops, second hand phones, computer accessories",
-  image = "/og-image.jpg",
+  image = "/icons/mylapkart.png",
   url,
   type = "website",
   price,
