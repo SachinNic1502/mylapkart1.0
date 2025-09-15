@@ -1,7 +1,8 @@
 import React from 'react'
-import { Wifi, RefreshCw, Home, ShoppingCart } from 'lucide-react'
+import { Wifi, Home, ShoppingCart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import OfflineActions from './offline-actions'
 
 export default function OfflinePage() {
   return (
@@ -42,14 +43,8 @@ export default function OfflinePage() {
         </div>
 
         <div className="space-y-3">
-          <Button 
-            onClick={() => window.location.reload()} 
-            className="w-full bg-blue-600 hover:bg-blue-700"
-          >
-            <RefreshCw className="w-4 h-4 mr-2" />
-            Try Again
-          </Button>
-          
+          <OfflineActions />
+
           <div className="flex gap-2">
             <Button asChild variant="outline" className="flex-1">
               <Link href="/">
