@@ -40,7 +40,7 @@ export async function PUT(request: NextRequest) {
     if (updateData.avatar && typeof updateData.avatar === "string") {
       if (updateData.avatar.startsWith("data:")) {
         // upload base64 image to Cloudinary
-        const { url } = await uploadBase64Image(updateData.avatar, "mylapkart/avatars", auth.userId.toString())
+        const { url } = await uploadBase64Image(updateData.avatar, "Laptop House/avatars", auth.userId.toString())
         updateData.avatar = url
       } else if (updateData.avatar.startsWith("http")) {
         // direct url

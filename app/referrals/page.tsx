@@ -75,7 +75,7 @@ export default function ReferralsPage() {
     if (data?.referralLink && navigator.share) {
       try {
         await navigator.share({
-          title: "Join MyLapKart",
+          title: "Join Laptop House",
           text: "Get amazing laptops at great prices! Use my referral link to sign up.",
           url: data.referralLink,
         })

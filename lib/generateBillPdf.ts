@@ -10,8 +10,8 @@
 //   doc.setFont("helvetica", "bold");
 //   doc.setFontSize(18);
 //   doc.setTextColor(40, 40, 150);
-//   // doc.text("MyLapkart", leftMargin, verticalPos);
-//   doc.addImage("/icons/mylapkart.png", "PNG", leftMargin, verticalPos, 50, 50);
+//   // doc.text("Laptop House", leftMargin, verticalPos);
+//   doc.addImage("/icons/Laptop House.png", "PNG", leftMargin, verticalPos, 50, 50);
   
 //   doc.setFontSize(10);
 //   doc.setTextColor(0, 0, 0);
@@ -19,7 +19,7 @@
 //   doc.text("GSTIN: 27AAAPL1234C1ZV", leftMargin, verticalPos + 5);
 //   doc.text("Shop No. 15, Navkar Plaza, Waki Road, Near Best Bazaar,Jamner, Tal-Jamner, Dist-Jalgaon 424206, Maharashtra", leftMargin, verticalPos + 10);
 //   doc.text("Phone: +91 7219655222 | Email: ssgorle@gmail.com", leftMargin, verticalPos + 15);
-//   doc.text("www.mylapkart.in", leftMargin, verticalPos + 20);
+//   doc.text("www.Laptop House.in", leftMargin, verticalPos + 20);
 
 //   // Invoice Title
 //   verticalPos += 30;
@@ -170,14 +170,14 @@
 // doc.setFont("helvetica", "normal");
 // doc.setFontSize(11);
 // doc.setTextColor(40, 40, 150); // Brand color
-// doc.text("Thank you for shopping with MyLapkart!", 105, summaryEndPos + 50, { align: "center" });
+// doc.text("Thank you for shopping with Laptop House!", 105, summaryEndPos + 50, { align: "center" });
 
 // // Customer Support
 // doc.setFontSize(9);
 // doc.setTextColor(0, 0, 0);
 // const supportInfo = [
 //   "For any queries, please contact our customer support:",
-//   "Email: support@mylapkart.com | Phone: +91 9876543210",
+//   "Email: support@Laptop House.com | Phone: +91 9876543210",
 //   "Business Hours: Mon-Sat, 10:00 AM to 7:00 PM"
 // ];
 // supportInfo.forEach((line, index) => {
@@ -220,7 +220,7 @@ export function generateBillPdf(order: any) {
   verticalPos += 10;
 
   // Store Information (with logo)
-  doc.addImage('/icons/mylapkart.png', 'PNG', leftMargin, verticalPos, 30, 30); // Logo at top-left
+  doc.addImage('/icons/Laptop House.png', 'PNG', leftMargin, verticalPos, 30, 30); // Logo at top-left
   // Move verticalPos to below the logo
   verticalPos += 32;
 

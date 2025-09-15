@@ -6,7 +6,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
-export async function uploadImage(file: File, folder = "mylapkart") {
+export async function uploadImage(file: File, folder = "Laptop House") {
   try {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
@@ -37,7 +37,7 @@ export async function uploadImage(file: File, folder = "mylapkart") {
   }
 }
 
-export async function uploadBase64Image(base64: string, folder = "mylapkart/avatars", publicId?: string) {
+export async function uploadBase64Image(base64: string, folder = "Laptop House/avatars", publicId?: string) {
   return new Promise<{ url: string; publicId: string }>((resolve, reject) => {
     cloudinary.uploader.upload(
       base64,

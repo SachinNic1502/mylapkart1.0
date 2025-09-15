@@ -10,7 +10,7 @@ export default function StoreLocatorPage() {
       <div className="max-w-5xl mx-auto py-12 px-4 text-gray-800">
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow p-8 mb-10 text-center">
           <h1 className="text-4xl font-bold mb-2 text-blue-900">Store Locator</h1>
-          <p className="text-lg text-gray-700 mb-2">Find a MyLapKart partner store near you!</p>
+          <p className="text-lg text-gray-700 mb-2">Find a Laptop House partner store near you!</p>
         </div>
         <Card className="mb-8 shadow-lg p-5 min-h-[400px] md:min-h-[500px] flex flex-col justify-center">
           <CardContent className="h-full flex-1 flex flex-col">
@@ -45,7 +45,7 @@ export default function StoreLocatorPage() {
               <div className="flex items-center h-full">
                 <div className="rounded-lg overflow-hidden border shadow-sm w-full h-full min-h-[500px]">
                   <iframe
-                    title="MyLapKart Jamner Map"
+                    title="Laptop House Jamner Map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.569227751761!2d75.7765517!3d20.8087083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd99f02182dfbaf%3A0xfd7d56ada3a5273b!2sMy%20Laptop%20House!5e0!3m2!1sen!2sin!4v1749445055229!5m2!1sen!2sin"
                     width="100%"
                     height="100%"

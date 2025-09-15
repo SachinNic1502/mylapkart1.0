@@ -15,7 +15,7 @@ export default function PaymentOptionsPage() {
       <div className="max-w-5xl mx-auto py-12 px-4 text-gray-800">
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow p-8 mb-10 text-center">
           <h1 className="text-4xl font-bold mb-2 text-blue-900">Payment Options</h1>
-          <p className="text-lg text-gray-700 mb-2">Choose from a variety of secure and convenient payment methods for your MyLapKart orders.</p>
+          <p className="text-lg text-gray-700 mb-2">Choose from a variety of secure and convenient payment methods for your Laptop House orders.</p>
         </div>
 
         {/* Payment Methods Card */}

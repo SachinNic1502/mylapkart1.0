@@ -10,7 +10,7 @@ export async function downloadBill(orderId: string) {
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `MyLapkart_Order_${orderId}_Bill.pdf`;
+    a.download = `Laptop House_Order_${orderId}_Bill.pdf`;
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {

@@ -15,7 +15,7 @@ export function SellerHeader() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <Link href="/seller/dashboard" className="text-2xl font-bold text-blue-600">
-              MyLapKart
+              Laptop House
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">

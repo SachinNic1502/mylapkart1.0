@@ -7,7 +7,7 @@ export function generateProductTitle(product: {
     const conditionText =
       product.condition === "new" ? "New" : product.condition === "business series" ? "business series" : "Used"
   
-    return `${conditionText} ${product.brand} ${product.name} - ${product.category} | MyLapKart`
+    return `${conditionText} ${product.brand} ${product.name} - ${product.category} | Laptop House`
   }
   
   export function generateProductDescription(product: {
@@ -21,7 +21,7 @@ export function generateProductTitle(product: {
     const conditionText =
       product.condition === "new" ? "brand new" : product.condition === "business series" ? "business series" : "pre-owned"
   
-    const baseDescription = `Buy ${conditionText} ${product.brand} ${product.name} for ₹${product.price.toLocaleString()} at MyLapKart. ${product.description || ""}`
+    const baseDescription = `Buy ${conditionText} ${product.brand} ${product.name} for ₹${product.price.toLocaleString()} at Laptop House. ${product.description || ""}`
   
     return baseDescription.length > 160 ? baseDescription.substring(0, 157) + "..." : baseDescription
   }
@@ -45,7 +45,7 @@ export function generateProductTitle(product: {
     const categoryName = categoryMap[category] || category
     const subcategoryName = subcategory ? subcategoryMap[subcategory] || subcategory : ""
   
-    return subcategoryName ? `${subcategoryName} ${categoryName} | MyLapKart` : `${categoryName} | MyLapKart`
+    return subcategoryName ? `${subcategoryName} ${categoryName} | Laptop House` : `${categoryName} | Laptop House`
   }
   
   export function generateCategoryDescription(category: string, subcategory?: string): string {
@@ -56,7 +56,7 @@ export function generateProductTitle(product: {
       accessories: "Complete your setup with our range of computer accessories, peripherals and components.",
     }
   
-    return descriptions[category] || "Find the best deals on quality tech products at MyLapKart."
+    return descriptions[category] || "Find the best deals on quality tech products at Laptop House."
   }
   
   export function generateKeywords(product: {
@@ -70,7 +70,7 @@ export function generateProductTitle(product: {
       product.brand.toLowerCase(),
       product.category.toLowerCase(),
       product.condition.toLowerCase(),
-      "mylapkart",
+      "Laptop House",
       "buy online",
       "best price",
     ]

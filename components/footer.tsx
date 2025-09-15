@@ -14,7 +14,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <motion.div {...fadeIn(0)}>
-            <h3 className="text-2xl font-extrabold mb-4 tracking-tight">MyLapKart</h3>
+            <h3 className="text-2xl font-extrabold mb-4 tracking-tight">Laptop House</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted partner for finding the perfect laptop.<br />
               Quality products, competitive prices, excellent service.
@@ -140,7 +140,7 @@ export function Footer() {
             </motion.a>
           </div>
           <div>
-            <p className="text-sm">&copy; 2024 MyLapKart. All rights reserved.</p>
+            <p className="text-sm">&copy; 2024 Laptop House. All rights reserved.</p>
             <p className="mt-2 text-xs text-gray-500">
               Developed by Sachin Rathod |{" "}
               <a

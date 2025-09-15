@@ -298,7 +298,7 @@ export default function CheckoutPage() {
           key: razorpayKeyId,
           amount: order.totalPrice * 100,
           currency: "INR",
-          name: "MyLapkart",
+          name: "Laptop House",
           description: `Order ID: ${order._id}`,
           order_id: order.razorpayOrderId,
           handler: async (response: any) => {

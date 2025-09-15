@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
         </div>
         <Card className="shadow-lg">
   <CardContent>
-    <p className="mb-4">Mylapkart (“we”, “our”, or “us”) is committed to safeguarding your privacy. This Privacy Policy outlines how we collect, use, and protect your personal data.</p>
+    <p className="mb-4">Laptop House (“we”, “our”, or “us”) is committed to safeguarding your privacy. This Privacy Policy outlines how we collect, use, and protect your personal data.</p>
     <h3 className="text-lg font-semibold mt-6 mb-2">What We Collect</h3>
     <ul className="list-disc ml-6 mb-4">
       <li><span className="font-medium">Personal Info:</span> Name, email, mobile number, address</li>

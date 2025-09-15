@@ -4,13 +4,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mylapkart-app:dev
+    image: Laptop House-app:dev
     ports:
       - "3000:3000"
     env_file:
       - .env.local
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/mylapkart
+      - MONGODB_URI=mongodb://mongo:27017/Laptop House
     volumes:
       - ./:/app
       - /app/node_modules

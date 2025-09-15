@@ -134,10 +134,10 @@ export default function ProductDetailPage() {
   // SEO Data
   const breadcrumbItems = product
     ? [
-        { name: "Home", url: "https://mylapkart.in" },
-        { name: "Products", url: "https://mylapkart.in/products" },
-        { name: product.category, url: `https://mylapkart.in/products?category=${product.category}` },
-        { name: product.name, url: `https://mylapkart.in/products/${product._id}` },
+        { name: "Home", url: "https://Laptop House.in" },
+        { name: "Products", url: "https://Laptop House.in/products" },
+        { name: product.category, url: `https://Laptop House.in/products?category=${product.category}` },
+        { name: product.name, url: `https://Laptop House.in/products/${product._id}` },
       ]
     : []
 
@@ -278,7 +278,7 @@ export default function ProductDetailPage() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Head>
-          <title>Product Not Found | MyLapKart</title>
+          <title>Product Not Found | Laptop House</title>
           <meta name="robots" content="noindex, nofollow" />
         </Head>
         <Header />
@@ -299,14 +299,14 @@ export default function ProductDetailPage() {
         <title>{generateProductTitle(product)}</title>
         <meta name="description" content={generateProductDescription(product)} />
         <meta name="keywords" content={generateKeywords(product)} />
-        <link rel="canonical" href={`https://mylapkart.in/products/${product._id}`} />
+        <link rel="canonical" href={`https://Laptop House.in/products/${product._id}`} />
 
         {/* Open Graph */}
         <meta property="og:type" content="product" />
         <meta property="og:title" content={generateProductTitle(product)} />
         <meta property="og:description" content={generateProductDescription(product)} />
         <meta property="og:image" content={product.images[0]?.url || "/og-image.jpg"} />
-        <meta property="og:url" content={`https://mylapkart.in/products/${product._id}`} />
+        <meta property="og:url" content={`https://Laptop House.in/products/${product._id}`} />
         <meta property="product:price:amount" content={product.price.toString()} />
         <meta property="product:price:currency" content="INR" />
         <meta property="product:availability" content={product.stock > 0 ? "in_stock" : "out_of_stock"} />

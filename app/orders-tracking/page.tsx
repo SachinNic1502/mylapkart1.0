@@ -16,7 +16,7 @@ export default function OrdersTrackingPage() {
       <div className="max-w-5xl mx-auto py-12 px-4 text-gray-800">
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow p-8 mb-10 text-center">
           <h1 className="text-4xl font-bold mb-2 text-blue-900">Order Tracking</h1>
-          <p className="text-lg text-gray-700 mb-4">Easily track your orders, view shipping status, and get real-time delivery updates for all your MyLapKart purchases.</p>
+          <p className="text-lg text-gray-700 mb-4">Easily track your orders, view shipping status, and get real-time delivery updates for all your Laptop House purchases.</p>
           <Button asChild size="lg" className="mt-2">
             <Link href="/orders">Track My Orders</Link>
           </Button>
@@ -29,7 +29,7 @@ export default function OrdersTrackingPage() {
           </CardHeader>
           <CardContent>
             <ol className="list-decimal pl-6 space-y-2 text-gray-700 mb-4">
-              <li>Login to your MyLapKart account.</li>
+              <li>Login to your Laptop House account.</li>
               <li>Go to <span className="font-semibold">Orders</span> or <span className="font-semibold">Order Tracking</span> from the navigation or footer.</li>
               <li>Select the order you want to track.</li>
               <li>View the real-time status, shipping details, and estimated delivery date.</li>
@@ -82,7 +82,7 @@ export default function OrdersTrackingPage() {
               <AccordionItem value="faq-1">
                 <AccordionTrigger>Can I track my order without logging in?</AccordionTrigger>
                 <AccordionContent>
-                  For your security, order tracking requires you to be logged in to your MyLapKart account.
+                  For your security, order tracking requires you to be logged in to your Laptop House account.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="faq-2">
@@ -109,7 +109,7 @@ export default function OrdersTrackingPage() {
           <CardContent>
             <p className="text-gray-700 mb-2">Our support team is here for you 24/7.</p>
             <ul className="text-gray-700 text-sm space-y-1 mb-2">
-              <li>Email: <a href="mailto:support@mylapkart.com" className="text-blue-600 underline">support@mylapkart.com</a></li>
+              <li>Email: <a href="mailto:support@Laptop House.com" className="text-blue-600 underline">support@Laptop House.com</a></li>
               <li>Phone: <a href="tel:+911234567890" className="text-blue-600 underline">+91 12345 67890</a></li>
               <li>Live Chat:Comming Soon</li>
             </ul>

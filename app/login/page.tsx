@@ -71,7 +71,7 @@ export default function LoginPage() {
         <div className="max-w-md mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Login to MyLapKart</CardTitle>
+              <CardTitle>Login to Laptop House</CardTitle>
               <CardDescription>Enter your credentials to access your account</CardDescription>
             </CardHeader>
             <CardContent>

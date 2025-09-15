@@ -8,9 +8,9 @@ interface OrganizationSchemaProps {
 }
 
 export function OrganizationSchema({
-  name = "MyLapKart",
-  url = "https://mylapkart.in",
-  logo = "https://mylapkart.in/logo.png",
+  name = "Laptop House",
+  url = "https://Laptop House.in",
+  logo = "https://Laptop House.in/logo.png",
   description = "Your ultimate destination for laptops, iPhones, desktops and accessories",
 }: OrganizationSchemaProps) {
   const schema = {
@@ -26,7 +26,7 @@ export function OrganizationSchema({
       contactType: "customer service",
       availableLanguage: ["English", "Hindi"],
     },
-    sameAs: ["https://facebook.com/mylapkart", "https://twitter.com/mylapkart", "https://instagram.com/mylapkart"],
+    sameAs: ["https://facebook.com/Laptop House", "https://twitter.com/Laptop House", "https://instagram.com/Laptop House"],
   }
 
   return (
@@ -77,7 +77,7 @@ export function ProductSchema({ product }: ProductSchemaProps) {
       availability: `https://schema.org/${product.availability === "in_stock" ? "InStock" : "OutOfStock"}`,
       seller: {
         "@type": "Organization",
-        name: product.seller || "MyLapKart",
+        name: product.seller || "Laptop House",
       },
       itemCondition: `https://schema.org/${getConditionSchema(product.condition)}`,
     },
@@ -154,8 +154,8 @@ interface WebsiteSchemaProps {
 }
 
 export function WebsiteSchema({
-  name = "MyLapKart",
-  url = "https://mylapkart.in",
+  name = "Laptop House",
+  url = "https://Laptop House.in",
   description = "Your ultimate destination for laptops, iPhones, desktops and accessories",
 }: WebsiteSchemaProps) {
   const schema = {

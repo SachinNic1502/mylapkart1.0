@@ -51,7 +51,7 @@ export async function PUT(request: NextRequest) {
         if (avatar && typeof avatar === "string") {
             if (avatar.startsWith("data:")) {
                 // Upload to Cloudinary
-                const { url } = await uploadBase64Image(avatar, "mylapkart/avatars", user._id.toString());
+                const { url } = await uploadBase64Image(avatar, "Laptop House/avatars", user._id.toString());
                 user.avatar = url;
             } else if (avatar.startsWith("http")) {
                 user.avatar = avatar;

@@ -43,7 +43,7 @@ export async function sendOrderConfirmationEmail(order: Order) {
   }
 
   const mailOptions = {
-    from: process.env.SMTP_FROM || "noreply@mylapkart.com",
+    from: process.env.SMTP_FROM || "noreply@Laptop House.com",
     to: order.user.email,
     subject: `Order Confirmation - #${order._id}`,
     html: `
@@ -82,11 +82,11 @@ export async function sendOrderConfirmationEmail(order: Order) {
         </div>
 
         <p>You can track your order status by logging into your account on our website.</p>
-        <p>Thank you for choosing MyLapKart!</p>
+        <p>Thank you for choosing Laptop House!</p>
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
           <p>This is an automated email. Please do not reply to this email.</p>
-          <p>© 2024 MyLapKart. All rights reserved.</p>
+          <p>© 2024 Laptop House. All rights reserved.</p>
         </div>
       </div>
     `,
@@ -113,7 +113,7 @@ export async function sendOrderStatusEmail(order: Order, status: 'confirmed' | '
   }
 
   const mailOptions = {
-    from: process.env.SMTP_FROM || "noreply@mylapkart.com",
+    from: process.env.SMTP_FROM || "noreply@Laptop House.com",
     to: order.user.email,
     subject: `Order Update - #${order._id}`,
     html: `
@@ -132,11 +132,11 @@ export async function sendOrderStatusEmail(order: Order, status: 'confirmed' | '
         </div>
 
         <p>You can track your order status by logging into your account on our website.</p>
-        <p>Thank you for choosing MyLapKart!</p>
+        <p>Thank you for choosing Laptop House!</p>
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
           <p>This is an automated email. Please do not reply to this email.</p>
-          <p>© 2024 MyLapKart. All rights reserved.</p>
+          <p>© 2024 Laptop House. All rights reserved.</p>
         </div>
       </div>
     `,
@@ -158,13 +158,13 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
   const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL}/reset-password?token=${resetToken}`
 
   const mailOptions = {
-    from: process.env.SMTP_FROM || "noreply@mylapkart.com",
+    from: process.env.SMTP_FROM || "noreply@Laptop House.com",
     to: email,
-    subject: "Password Reset Request - MyLapKart",
+    subject: "Password Reset Request - Laptop House",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #2563eb;">Password Reset Request</h1>
-        <p>You have requested to reset your password for your MyLapKart account.</p>
+        <p>You have requested to reset your password for your Laptop House account.</p>
         <p>Click the button below to reset your password:</p>
         
         <div style="text-align: center; margin: 30px 0;">
@@ -181,7 +181,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
           <p>This is an automated email. Please do not reply to this email.</p>
-          <p>© 2024 MyLapKart. All rights reserved.</p>
+          <p>© 2024 Laptop House. All rights reserved.</p>
         </div>
       </div>
     `,
@@ -211,8 +211,8 @@ export async function sendContactEmail({
   }
 
   const mailOptions = {
-    from: process.env.SMTP_FROM || "noreply@mylapkart.com",
-    to: "support@mylapkart.com",
+    from: process.env.SMTP_FROM || "noreply@Laptop House.com",
+    to: "support@Laptop House.com",
     subject: `Contact Form: ${subject}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -231,7 +231,7 @@ export async function sendContactEmail({
         </div>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px;">
-          <p>This message was sent from the MyLapKart contact form.</p>
+          <p>This message was sent from the Laptop House contact form.</p>
           <p>Reply directly to this email to respond to the customer.</p>
         </div>
       </div>

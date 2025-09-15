@@ -6,7 +6,7 @@ import "@/lib/models/Order";
 import "@/lib/models/User";
 import "@/lib/models/CoinTransaction";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/mylapkart"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/Laptop House"
 
 if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI environment variable")

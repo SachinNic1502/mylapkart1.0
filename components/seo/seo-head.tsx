@@ -19,10 +19,10 @@ interface SEOProps {
 }
 
 export function SEOHead({
-  title = "MyLapKart - Your Ultimate Laptop Store",
+  title = "Laptop House - Your Ultimate Laptop Store",
   description = "Find the best laptops, iPhones, desktops and accessories at competitive prices. New, business series and second-hand devices with warranty.",
   keywords = "laptops, iphones, desktops, accessories, business series laptops, second hand phones, computer accessories",
-  image = "/icons/mylapkart.png",
+  image = "/icons/Laptop House.png",
   url,
   type = "website",
   price,
@@ -33,8 +33,8 @@ export function SEOHead({
   noindex = false,
 }: SEOProps) {
   const router = useRouter()
-  const currentUrl = url || `https://mylapkart.in${router.asPath}`
-  const fullTitle = title.includes("MyLapKart") ? title : `${title} | MyLapKart`
+  const currentUrl = url || `https://Laptop House.in${router.asPath}`
+  const fullTitle = title.includes("Laptop House") ? title : `${title} | Laptop House`
 
   return (
     <Head>
@@ -42,7 +42,7 @@ export function SEOHead({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="MyLapKart" />
+      <meta name="author" content="Laptop House" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={currentUrl} />
 
@@ -56,7 +56,7 @@ export function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:site_name" content="MyLapKart" />
+      <meta property="og:site_name" content="Laptop House" />
       <meta property="og:locale" content="en_IN" />
 
       {/* Product specific Open Graph */}
@@ -75,7 +75,7 @@ export function SEOHead({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:site" content="@MyLapKart" />
+      <meta name="twitter:site" content="@Laptop House" />
 
       {/* Additional Meta Tags */}
       <meta name="theme-color" content="#2563eb" />
@@ -83,10 +83,10 @@ export function SEOHead({
 
       {/* Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
+      <link rel="manifest" href="/manifest.json" />
     </Head>
   )
 }

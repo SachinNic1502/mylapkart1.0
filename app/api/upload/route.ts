@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: "File size too large. Maximum 5MB allowed." }, { status: 400 })
     }
 
-    const result = await uploadImage(file, "mylapkart/products")
+    const result = await uploadImage(file, "Laptop House/products")
 
     return NextResponse.json({
       url: result.url,

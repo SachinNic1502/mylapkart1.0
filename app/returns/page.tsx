@@ -58,7 +58,7 @@ export default function ReturnsAndRefundsDocPage() {
             </CardHeader>
             <CardContent>
               <ol className="list-decimal pl-6 space-y-2 text-gray-700 mb-2">
-                <li>Login to your MyLapKart account and go to <span className="font-semibold">My Orders</span>.</li>
+                <li>Login to your Laptop House account and go to <span className="font-semibold">My Orders</span>.</li>
                 <li>Select the order and item you wish to return.</li>
                 <li>Click <span className="font-semibold">Request Return</span> and fill out the required details.</li>
                 <li>Pack the item securely for pickup or drop-off as instructed.</li>
@@ -116,7 +116,7 @@ export default function ReturnsAndRefundsDocPage() {
           <CardContent>
             <p className="text-gray-700 mb-2">Need help? Our support team is here for you 24/7.</p>
             <ul className="text-gray-700 text-sm space-y-1 mb-2">
-              <li>Email: <a href="mailto:support@mylapkart.com" className="text-blue-600 underline">support@mylapkart.com</a></li>
+              <li>Email: <a href="mailto:support@Laptop House.com" className="text-blue-600 underline">support@Laptop House.com</a></li>
               <li>Phone: <a href="tel:+911234567890" className="text-blue-600 underline">+91 12345 67890</a></li>
               <li>Live Chat: Coming Soon</li>
             </ul>
