@@ -114,8 +114,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="facebook-domain-verification" content="a5wo3cyj9vm6616vddphh5byzx83rf" />
         <OrganizationSchema />
         <WebsiteSchema />
+        
       </head>
       <body className={inter.className}>
         <Providers>
